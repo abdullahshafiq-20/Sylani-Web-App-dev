@@ -1,0 +1,111 @@
+
+/* this is for header  */
+.main2 {
+  text-align: center;
+  overflow: hidden;
+  background-color: #333;
+  border: #ff0303;
+  border-width: 3px;
+  border-style: solid;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.main2 a {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+  font-size: 17px;
+}
+.main2 a:hover {
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+  align-items: center;
+}
+/*=============================================*/
+body {
+  background-image: url(acb.png);
+}
+
+
+
+
+/* this is for earth  */
+.body1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.earth {
+  width: 500px;
+  height: 500px;
+  background-image: url(Untitleddesign.png);
+  background-size: cover;
+  border-radius: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 3);
+  animation-name: rotate;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 610px;
+  }
+}
+/*=============================================*/
+
+
+/* this is for body_categories  */
+.body_cat {
+  border: #0b0b58;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #f3f3f3;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+.body_cat:hover {
+  background-color: #ddd;
+  color: black;
+  text-align: center;
+  align-items: center;
+}
+/*=============================================*/
+
+
+
+
+/* this is for about us  */
+body{
+  background-image: url("acb.png");
+}
+.About-us {
+width: 100%;
+text-align: center;
+background-color: hsl(322, 11%, 60%);
+margin-top: 40px;
+margin-bottom: 30px;
+}
+
+h1{
+color: rgb(0, 0, 0);
+font-size: 35px;
+}
+img {
+border-radius: 50%;
+}
+
+p {
+font-size: 20px;
+} 
+/*=============================================*/
+
