@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Pacifico&family=Poppins&family=Satisfy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: border-box;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: blueviolet;
+    height: 10vh;
+    font-size: 25px;
+    font-weight: bold;
+    border: 10px solid white;
+}
+
+.poem1,
+.poem2,
+.poem3,
+.poem4,
+.poem5 {
+    color: white;
+}
+
+.poem1:hover,
+.poem2:hover,
+.poem3:hover,
+.poem4:hover,
+.poem5:hover {
+    color: lightgreen;
+}
+
+.content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.heading-1 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Luckiest Guy', cursive;
+    color: purple;
+}
+
+.para p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: teal;
+    font-weight: bold;
+}
+
+.para::first-line {
+    color: brown;
+}
+
+.heading-2 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    color: orangered;
+}
+
+.heading-3 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Satisfy', cursive;
+    color: rgb(255, 0, 0);
+}
+.heading-4 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Pacifico';
+    color: rgb(255, 0, 255);
+}
+.heading-5 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Pacifico';
+    color: rgb(0, 255, 42);
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover
+{
+    color: lightgreen;
+}

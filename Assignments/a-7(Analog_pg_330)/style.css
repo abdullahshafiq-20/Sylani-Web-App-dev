@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+    border: border-box;
+
+}
+
+.full_border {
+    justify-content: center;
+    align-items: center;
+    border: 8px double gray;
+    width: 80%;
+    height: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.border-box {
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.first {
+    font-size: 20px;
+    font-weight: 400;
+    color: #3d3b39;
+
+}
+
+.second {
+    font-size: 40px;
+    font-weight: 400;
+    color: #3d3b39;
+    padding: 0;
+}
+
+.third {
+    font-size: 20px;
+    font-weight: 400;
+    color: #3d3b39;
+    letter-spacing: 2px;
+
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: black;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.home {
+    color: rgb(255, 166, 0);
+}
+
+.home:hover {
+    color: rgb(65, 59, 48);
+    text-decoration: none;
+}
+
+.for_sale {
+    color: rgb(65, 59, 48);
+}
+
+.for_sale:hover {
+    color: rgb(255, 166, 0);
+    text-decoration: none;
+}
+
+.repair {
+    color: rgb(65, 59, 48);
+}
+
+.repair:hover {
+    color: rgb(255, 166, 0);
+    text-decoration: none;
+}
+
+.about {
+    color: rgb(65, 59, 48);
+}
+
+.about:hover {
+    color: rgb(255, 166, 0);
+    text-decoration: none;
+}
+
+.contact {
+    color: rgb(65, 59, 48);
+}
+
+.contact:hover {
+    color: rgb(255, 166, 0);
+    text-decoration: none;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.image1 {
+    width: 250px;
+    height: 200px;
+}
+
+.image2 {
+    width: 250px;
+    height: 200px;
+}
+
+.image3 {
+    width: 250px;
+    height: 200px;
+}
+
+.images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
