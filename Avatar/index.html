@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar-Abdullah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="  
+    crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+</head>
+<style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container-avatar
+    {
+        display: flex;
+        width: 23%;
+        border-radius: 30px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 1;
+        box-shadow: 6px 6px 6px #c5c5c5, -6px -6px 6px #ffffff;
+        flex-wrap: wrap;
+        padding:8px 0px 8px 0px; 
+    }
+    .container-avatar::before
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        border-radius: 30em;
+        background-image: linear-gradient(to right, #0fd850 0% , #f9f047 100%);
+        transition: 0.5s ease;
+        display: block;
+        z-index: -1;
+    }
+    .container-avatar:hover::before
+    {
+        width: 100%;
+
+    }
+    .image-avatar img {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #282626;
+        color: #282626;
+        overflow: visible;
+    }
+
+    .text-avatar p
+    {
+        font-size: 14px;
+        margin-left: 5px;
+        margin-top: 2px;
+    }
+    .text-avatar p i
+    {
+        font-size: 14px;
+        margin-left: 5px;
+        margin-top: 2px;
+    }
+    .text-avatar p i:hover
+    {
+        font-size: 18px;
+        transition: 0.3s ease;
+
+    }
+
+</style>
+
+
+<body>
+
+    <div class="container-avatar">
+        <div class="image-avatar">
+            <img src="new.jpg" alt="">
+        </div>
+        <div class="text-avatar">
+           <p>Abdullah Shafiq</p>
+           <p>FAST'26 <a href="https://github.com/abdullahshafiq-20"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/abdullah-shafiq-158073234/"><i class="fa-brands fa-linkedin-in"></i></a></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
