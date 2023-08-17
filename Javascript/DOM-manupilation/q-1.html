@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin-top: 50px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            padding: 10px;
+            margin: 5px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #display {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" name="names" id="names" placeholder="Enter your Name">
+        <input type="email" name="email" id="email" placeholder="Enter your Email">
+    </form>
+    <button onclick="display1()">Submit</button>
+    <button onclick="clears()">Clear</button>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+    <script src="q-1.js"></script>
+</body>
+</html>
