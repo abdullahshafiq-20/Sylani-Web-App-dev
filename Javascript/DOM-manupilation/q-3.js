@@ -1,10 +1,10 @@
 
 
-function month()
+function month21()
 {
     const month = document.getElementById("month").value;
-    const display = document.getElementById("display");
-    const result = document.getElementById("result");
+    const display = document.getElementById("display21");
+    const result = document.getElementById("result21");
     const body = document.body;
     body.classList.remove("winter", "spring", "summer", "autumn");
 
