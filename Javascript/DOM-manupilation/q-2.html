@@ -74,18 +74,18 @@ button:hover {
             <option value="Divide">Divide</option>
         </select>
         <br>
-        <button type="button" id="calculate-btn" onclick="calculate()">Calculate</button>
+        <button type="button" id="calculate-btn" onclick="calculate12()">Calculate</button>
 
     </form>
-    <p id="result">Result:</p>
+    <p id="result12">Result:</p>
 
     <script>
         
-function calculate() {
+function calculate12() {
     const num1 = parseFloat(document.querySelector('#num1').value);
     const num2 = parseFloat(document.querySelector('#num2').value);
     const operator = document.querySelector('#operator').value;
-    const resultElement = document.querySelector('#result');
+    const resultElement = document.querySelector('#result12');
 
     if (isNaN(num1) || isNaN(num2)) {
         resultElement.innerHTML = "Please enter valid numbers.";
