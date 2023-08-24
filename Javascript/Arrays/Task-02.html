@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-02</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .Mydiv {
+            width: 200px;
+            height: 200px;
+            background-color: #fff; /* Default background color */
+            border: 2px solid #333;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Mybutton {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #Mybutton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Mydiv">
+        Click the button to change the color.
+    </div>
+    <button id="Mybutton">Change Color</button>
+
+    <script>
+        const Mydiv = document.querySelector(".Mydiv");
+        const Mybutton = document.querySelector("#Mybutton");
+        Mybutton.addEventListener("click", function () {
+            if (Mydiv.style.backgroundColor === "rgb(255, 255, 255)") {
+                Mydiv.style.backgroundColor = "red";
+            } else {
+                Mydiv.style.backgroundColor = "rgb(255, 255, 255)";
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
