@@ -6,6 +6,6 @@ https://abdullahshafiq-20.github.io/Sylani-Web-App-dev/Javascript/DOM-manupilati
 
  https://abdullahshafiq-20.github.io/Sylani-Web-App-dev/Javascript/Arrays/Task-01.html <br>
  https://abdullahshafiq-20.github.io/Sylani-Web-App-dev/Javascript/Arrays/Task-02.html <br>
- https://abdullahshafiq-20.github.io/Sylani-Web-App-dev/Javascript/Arrays/Task-03.html
+ https://abdullahshafiq-20.github.io/Sylani-Web-App-dev/Javascript/Arrays/task-03.html
  
  
