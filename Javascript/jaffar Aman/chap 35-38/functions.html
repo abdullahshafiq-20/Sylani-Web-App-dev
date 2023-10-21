@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        // 1. Write a function that displays current date & time in your browser.
+
+        function currentDateAndTime() {
+
+            var date = new Date();
+
+            document.write(date);
+
+        }
+
+        currentDateAndTime();
+
+        // =============================
+
+        // 2. Write a function that takes first & last name and then it greets the user using his full name.
+
+        function greetUser(firstName, lastName) {
+
+            var fullName = firstName + " " + lastName;
+
+            alert("Hello " + fullName);
+
+        }
+
+        greetUser("Jaffar", "Aman");
+
+        // =============================
+
+        // 3. Write a function that adds two numbers (input by user) and returns the sum of two numbers.
+
+        function addTwoNumbers(num1, num2) {
+
+            return num1 + num2;
+
+        }
+
+        var num1 = +prompt("Enter first number");
+
+        var num2 = +prompt("Enter second number");
+
+        alert("Sum of " + num1 + " and " + num2 + " is " + addTwoNumbers(num1, num2));
+
+        // =============================
+
+        // 4. Calculator: Write a function that takes three arguments num1, num2 & operator & compute the desired operation. Return and show the desired result in your browser.
+
+        function calculator(num1, num2, operator) {
+
+            if (operator == "+") {
+
+                return num1 + num2;
+
+            } else if (operator == "-") {
+
+                return num1 - num2;
+
+            } else if (operator == "*") {
+
+                return num1 * num2;
+
+            } else if (operator == "/") {
+
+                return num1 / num2;
+
+            } else if (operator == "%") {
+
+                return num1 % num2;
+
+            } else {
+
+                return "Invalid operator";
+
+            }
+
+        }
+
+        var num1 = +prompt("Enter first number");
+
+        var num2 = +prompt("Enter second number");
+
+        var operator = prompt("Enter operator");
+
+        alert(num1 + " " + operator + " " + num2 + " = " + calculator(num1, num2, operator));
+
+        // =============================
+
+        // 5. Write a function that squares its argument.
+
+        function square(num) {
+
+            return num * num;
+
+        }
+
+        var num = +prompt("Enter a number to find its square");
+
+        alert("Square of " + num + " is     " + square(num));
+
+        // =============================
+        // give me all answers from 6-14 at once
+        // =============================
+
+        // 6. Write a function that computes factorial of a number.
+
+        function factorial(num) {
+
+            var fact = 1;
+
+            for (var i = num; i >= 1; i--) {
+
+                fact *= i;
+
+            }
+
+            return fact;
+
+        }
+
+        var num = +prompt("Enter a number to find its factorial");
+
+        alert("Factorial of " + num + " is " + factorial(num));
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

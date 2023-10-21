@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <!-- Write a program that takes a positive integer from user & display the following in your browser. a. number b. round off value of the number c. floor value of the number d. ceil value of the number -->
+
+    <script>
+        var number = +prompt("Enter a positive integer");
+        document.write("number: " + number + "<br>");
+        document.write("round off value: " + Math.round(number) + "<br>");
+        document.write("floor value: " + Math.floor(number) + "<br>");
+        document.write("ceil value: " + Math.ceil(number) + "<br>");
+    </script>
+
+    <!-- Write a program that takes a negative floating point number from user & display the following in your browser. a. number b. round off value of the number c. floor value of the number d. ceil value of the number -->
+
+    <script>
+        var number = +prompt("Enter a negative floating point number");
+        document.write("number: " + number + "<br>");
+        document.write("round off value: " + Math.round(number) + "<br>");
+        document.write("floor value: " + Math.floor(number) + "<br>");
+        document.write("ceil value: " + Math.ceil(number) + "<br>");
+
+    </script>
+
+    <!-- Write a program that displays the absolute value of a number. E.g. absolute value of -4 is 4 & absolute value of 5 is 5 -->
+
+    <script>
+        var number = +prompt("Enter a number");
+        document.write("The absolute value of " + number + " is " + Math.abs(number));
+    </script>
+
+
+    <!-- Write a program that simulates a dice using random() method of JS Math class. Display the value of dice in your browser.: -->
+
+    <script>
+        var dice = Math.random() * 6;
+        document.write("random dice value: " + Math.ceil(dice));
+
+    </script>
+
+    <!-- Write a program that simulates a coin toss using random() method of JS Math class. Display the value of coin in your browser -->
+
+    <script>
+        var coin = Math.random() * 2;
+        if (Math.ceil(coin) == 1) {
+            document.write(Math.ceil(coin) + "<br>");
+            document.write("random coin value: Tails");
+        } else {
+            document.write(Math.ceil(coin) + "<br>");
+            document.write("random coin value: Heads");
+        }
+    </script>
+
+    <!-- Write a program that shows a random number between 1 and 100 in your browser. -->
+
+    <script>
+        var number = Math.random() * 100;
+        document.write("random number between 1 and 100: " + Math.ceil(number));
+    </script>
+
+    <!-- Write a program that asks the user about his weight. Parse the user input and display his weight in your browser. Possible user inputs can be: a. 50 b. 50kgs c. 50.2kgs d. 50.2kilograms -->
+
+    <script>
+        var weight = prompt("Enter your weight in kilograms");
+        document.write("The weight of user is " + parseFloat(weight) + " kilograms");
+    </script>
+
+    <!-- Write a program that stores a random secret number from 1 to 10 in a variable. Ask the user to input a number between 1 and 10. If the user input equals the secret number, congratulate the user. -->
+
+    <script>
+        var secretNumber = Math.random() * 10;
+        var userNumber = +prompt("Enter a number between 1 and 10");
+        if (Math.ceil(secretNumber) == userNumber) {
+            alert("Congratulations!");
+        } else {
+            alert("Try again!");
+        }
+
+    </script>
+    
+
+</body>
+
+</html>
