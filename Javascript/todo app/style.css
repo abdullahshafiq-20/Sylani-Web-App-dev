@@ -61,6 +61,7 @@ backdrop-filter: blur(2.6px);
 
 input {
     flex: 1;
+    width: 80%;
     border: none;
     outline: none;
     padding: 10px 20px;
@@ -72,6 +73,10 @@ input {
 button {
     border: none;
     outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
     padding: 16px 50px;
     background: #37a8ff;
     color: #fff;
