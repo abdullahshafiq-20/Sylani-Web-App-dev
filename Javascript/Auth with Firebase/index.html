@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+               <input type="checkbox" class="toggle">
+               <span class="slider"></span>
+               <span class="card-side"></span>
+               <div class="flip-card__inner">
+                  <div class="flip-card__front">
+                     <div class="title">Log in</div>
+
+
+                     <form class="flip-card__form" action="" id="login">
+                        <input class="flip-card__input"  placeholder="Email" id="email_login">
+                        <input class="flip-card__input"  placeholder="Password" id="password_login">
+                        <button class="flip-card__btn" onclick="login(event)">Let's go!</button>
+                     </form>
+
+
+                  </div>
+                  <div class="flip-card__back">
+                     <div class="title">Sign up</div>
+
+
+                     <form class="flip-card__form" action="">
+                        <input class="flip-card__input" placeholder="Name"  id="name_sign">
+                        <input class="flip-card__input"  placeholder="Email" type="email" id="email_sign">
+                        <input class="flip-card__input" placeholder="Password" type="password" id="password_sign">
+                        <button class="flip-card__btn" onclick="signup(event)">Confirm!</button>
+                     </form>
+
+
+
+                  </div>
+               </div>
+            </label>
+        </div>   
+   </div>
+
+   <!-- //create form with name and password -->
+    <!-- //create a button -->
+    <!-- //create a function -->
+    <!-- //create a variable -->
+
+    <!-- <form class="" action="">
+        <input  id="name">
+        <input id="email">
+        <input id="password">
+        <button class="" onclick="signup()">Confirm!</button>
+     </form> -->
+
+    
+    
+</body>
+<script type="module" src="app.js"></script>    
+</html>
