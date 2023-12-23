@@ -38,6 +38,7 @@ list_cont.addEventListener("click", function (e) {
         e.target.classList.toggle("checked");
     }
 }, false);
+
 async function addtask() {
     if (input.value === '') {
         alert("Please enter a task");
