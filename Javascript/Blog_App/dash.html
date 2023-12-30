@@ -19,48 +19,45 @@
     <div class="wrapper">
         <div class="nav-bar">
             <div class="navlist">
-                <div class="exit-btn">
-                    <button class="flip-card__btn"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <div class="myaccount">
+                    <button class="flip-card__btn" id="feedbtn" onclick="feed()"><i class="fa-solid fa-earth"></i></button>
+                </div>
+                <div class="myaccount">
+                    <button class="flip-card__btn" id="userbtn" onclick="OnlyUserPost()"><i class="fa-solid fa-user"></i></button>
                 </div>
                 <div class="crt-postbtn" data-bs-toggle="modal" data-bs-target="#myModal">
                     <button class="flip-card__btn"><i class="fa-solid fa-plus"></i></button>
                 </div>
+                <div class="exit-btn">
+                    <button class="flip-card__btn" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
+               
+               
             </div>
         </div>
-        <div class="feedbck">
-            <div class="card">
+
+        <div class="feedbck" id="feedbck">
+            <!-- <div class="card">
                 <form class="form">
-                    <div class="picture-blk">
-                        <!-- <div class="post-picture"> -->
-                        <img src="img/screen-shot-2023-04-13-at-10-35-31-am.webp" alt="">
-                        <!-- </div> -->
+                  <div class="picture-blk">
+                    <img src="img/screen-shot-2023-04-13-at-10-35-31-am.webp" alt="">
+                  </div>
+                  <div class="title">${title}</div>
+                  <div class="description">
+                    <p>
+                      ${des}<span id="${uniqueId}_dots">...</span><span id="${uniqueId}_more">${des2}</span>
+                    </p>
+                  </div>
+                  <div class="login-with">
+                    <div class="button-log" id="${uniqueId}_likebtn" onclick="likebtn('${uniqueId}')">
+                      <i class="fa-solid fa-heart"></i>
                     </div>
-                    <div class="title">Welcome</div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum
-                            interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque
-                                enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae
-                                massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed
-                                ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare
-                                turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non
-                                fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                    <div class="button-log" onclick="readmore('${uniqueId}')" id="${uniqueId}_myBtn">
+                      <i class="fa-solid fa-arrow-down"></i>
                     </div>
-                    <!-- <input class="input" name="email" placeholder="Email" type="email">
-                    <input class="input" name="password" placeholder="Password" type="password"> -->
-                    <div class="login-with">
-                        <div class="button-log">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                        <div class="button-log">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                        <div class="button-log" onclick="readmore()" id="MyBtn">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                    </div>
-                    <!-- <button class="button-confirm">Let`s go →</button> -->
+                  </div>
                 </form>
-            </div>
+              </div> -->
 
 
         </div>
@@ -84,17 +81,18 @@
                 <form class="form">
                     <div class="top">
                         <div class="title">Create a post</div>
-                        <button class="close-btn" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+                        <button class="close-btn" id="close-btn" data-bs-dismiss="modal"><i
+                                class="fa-solid fa-xmark"></i></button>
                     </div>
                     <button class="close-btn" id="upload-btn"><i class="fa-solid fa-upload"></i></button>
                     <!-- Hidden file input element -->
                     <div id="file-name"></div>
                     <input type="file" id="file-input" style="display: none;">
-                    <input class="input" placeholder="Title" type="text">
+                    <input class="input" placeholder="Title" type="text" id="title">
                     <textarea class="input" name="description" placeholder="description" id="description" cols="30"
                         rows="10"></textarea>
 
-                    <button class="button-confirm">Post</button>
+                    <button class="button-confirm" onclick="addpost()">Post</button>
                 </form>
             </div>
 

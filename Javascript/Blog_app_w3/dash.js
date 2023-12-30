@@ -19,8 +19,6 @@ const feedbck = document.getElementById("feedbck");
 var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
   keyboard: false
 })
-var userbtn = document.getElementById("userbtn");
-var feedbtn = document.getElementById("feedbtn");
 
 // if user already login on same pc
 window.addEventListener("DOMContentLoaded", function () {
@@ -33,9 +31,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
 // fucntion for getting data from firebase
- async function feed() {
-
-  feedbck.innerHTML = "";
+window.addEventListener("load", async function () {
   console.log("blog load");
   var uid = localStorage.getItem("uid");
   console.log(uid, "uid");
@@ -58,61 +54,15 @@ window.addEventListener("DOMContentLoaded", function () {
   });
   console.log(BlogArr, "BlogArr");
 
-
-  for (var i = 0; i < BlogArr.length; i++) {
-    var blog = BlogArr[i];
-    // console.log(blog);
-
-    feedbck.innerHTML += createUI(blog.title, blog.desc, blog.image, blog.uid, blog.blogId);
-
-  }
-
-  //user button is ative
-  feedbtn.classList.add("active");
-  userbtn.classList.remove("active");
-  console.log(userbtn);
-}
-window.feed = feed;
-
-async function OnlyUserPost() {
-  feedbck.innerHTML = "";
-
-  console.log("OnlyUserPost");
-  var uid = localStorage.getItem("uid");
-  console.log(uid, "uid");
-
-  if (!uid) {
-    location.replace("./index.html");
-    return;
-  }
-  var BlogArr = [];
-  const querySnapshot = await getDocs(collection(db, "posts"));
-  querySnapshot.forEach(function (doc) {
-    BlogArr.push({
-      title: doc.data().title,
-      desc: doc.data().description,
-      uid: doc.data().uid,
-      image: doc.data().image,
-      blogId: doc.id,
-
-    });
-  });
-  // console.log(BlogArr, "BlogArr");
+  
   for (var i = 0; i < BlogArr.length; i++) {
     var blog = BlogArr[i];
     // console.log(blog);
     if (blog.uid == uid) {
-      console.log("conndition matched");
-      feedbck.innerHTML += createUIforUser(blog.title, blog.desc, blog.image, blog.uid, blog.blogId);
+      feedbck.innerHTML += createUI(blog.title, blog.desc, blog.image, blog.uid, blog.blogId);
     }
   }
-
-  userbtn.classList.add("active");
-  feedbtn.classList.remove("active");
-  
-
-}
-window.OnlyUserPost = OnlyUserPost;
+});
 
 
 // logout function
@@ -257,48 +207,6 @@ function createUI(title, description, image, uid, unID) {
 
 window.createUI = createUI;
 
-function createUIforUser(title, description, image, uid, unID) {
-  var length = description.length;
-  var uniqueId = unID; // Unique ID for each card
-  console.log(unID);
-  if (length > 100) {
-    var des = description.slice(0, 100);
-    var des2 = description.slice(100, length);
-  } else {
-    var des = description;
-    var des2 = "";
-  }
 
-  var UI = `
-    <div class="card">
-      <form class="form">
-        <div class="picture-blk">
-          <img src="img/screen-shot-2023-04-13-at-10-35-31-am.webp" alt="">
-        </div>
-        <div class="title">${title}</div>
-        <div class="description">
-          <p>
-            ${des}<span id="${uniqueId}_dots">...</span><span id="${uniqueId}_more">${des2}</span>
-          </p>
-        </div>
-        <div class="login-with">
-          <div class="button-log" id="${uniqueId}_likebtn" onclick="likebtn('${uniqueId}')">
-            <i class="fa-solid fa-heart"></i>
-          </div>
-          <div class="button-log" onclick="readmore('${uniqueId}')" id="${uniqueId}_myBtn">
-            <i class="fa-solid fa-arrow-down"></i>
-          </div>
-          <div class="button-log" onclick="readmore('${uniqueId}')" id="${uniqueId}_myBtn">
-            <i class="fa-solid fa-trash"></i>
-          </div>
-        </div>
-      </form>
-    </div>
-  `;
-
-  return UI;
-}
-
-window.createUIforUser = createUIforUser;
 
 
