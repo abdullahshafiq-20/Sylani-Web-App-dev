@@ -1,20 +1,14 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
-  getFirestore,
-  addDoc,
-  collection,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-const firebaseConfig = {
-  apiKey: "AIzaSyBmEcMc_jHCDGqlqs6qZ8xC14A9UNrlmoY",
-  authDomain: "my-first-project-1-c98da.firebaseapp.com",
-  projectId: "my-first-project-1-c98da",
-  storageBucket: "my-first-project-1-c98da.appspot.com",
-  messagingSenderId: "1012241146158",
-  appId: "1:1012241146158:web:a5bc95e7379c334635dabf"
-};
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+getFirestore,
+collection,
+addDoc,
+getDocs,
+doc,
+deleteDoc,
+updateDoc,
+db,
+} from "./firbase.js";
+
 const feedbck = document.getElementById("feedbck");
 var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
   keyboard: false
@@ -33,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
 // fucntion for getting data from firebase
- async function feed() {
+async function feed() {
 
   feedbck.innerHTML = "";
   console.log("blog load");
@@ -109,7 +103,7 @@ async function OnlyUserPost() {
 
   userbtn.classList.add("active");
   feedbtn.classList.remove("active");
-  
+
 
 }
 window.OnlyUserPost = OnlyUserPost;
@@ -161,6 +155,14 @@ function readmore(uniqueId) {
   }
 }
 window.readmore = readmore;
+
+
+async function deletePost(uniqueId) {
+  console.log(uniqueId);
+  await deleteDoc(doc(db, "posts", uniqueId));
+  OnlyUserPost();
+}
+window.deletePost = deletePost;
 
 
 // upload image function
@@ -288,14 +290,13 @@ function createUIforUser(title, description, image, uid, unID) {
           <div class="button-log" onclick="readmore('${uniqueId}')" id="${uniqueId}_myBtn">
             <i class="fa-solid fa-arrow-down"></i>
           </div>
-          <div class="button-log" onclick="readmore('${uniqueId}')" id="${uniqueId}_myBtn">
+          <div class="button-log" onclick="deletePost('${uniqueId}')" id="${uniqueId}_delbtn">
             <i class="fa-solid fa-trash"></i>
           </div>
         </div>
       </form>
     </div>
   `;
-
   return UI;
 }
 

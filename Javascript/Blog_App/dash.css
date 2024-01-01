@@ -233,7 +233,7 @@ body {
 }
 
 .card {
-  width: 30%;
+  width: 20%;
   height: auto;
   display: flex;
   flex-direction: column;
