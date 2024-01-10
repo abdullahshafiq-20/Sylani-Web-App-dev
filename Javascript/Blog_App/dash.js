@@ -7,6 +7,10 @@ doc,
 deleteDoc,
 updateDoc,
 db,
+getDownloadURL,
+ref,
+storage,
+uploadBytesResumable,
 } from "./firbase.js";
 
 const feedbck = document.getElementById("feedbck");
@@ -18,7 +22,7 @@ var feedbtn = document.getElementById("feedbtn");
 
 // if user already login on same pc
 window.addEventListener("DOMContentLoaded", function () {
-  var uid = localStorage.getItem("uid");
+  var uid = localStorage.getItem("uid");  
   if (!uid) {
     window.location.href = "index.html";
   }
@@ -193,6 +197,15 @@ document.getElementById('file-input').addEventListener('change', function () {
 // add post function
 async function addpost() {
   event.preventDefault();
+  var fileinput = document.getElementById("file-input");
+  var imageURL;
+
+  if (fileinput.files[0]) {
+    imageURL = await imageUpload(fileinput.files[0]);
+  } else {
+    imageURL = "./img/screen-shot-2023-04-13-at-10-35-31-am.webp";
+  }
+
   var title = document.getElementById("title");
   var description = document.getElementById("description");
   var file = document.getElementById("file-input");
@@ -203,16 +216,17 @@ async function addpost() {
     description: description.value,
     uid: uid,
     // file:file.files[0],
-    image: ""
+    image: imageURL,
   }
   const docRef = await addDoc(collection(db, "posts"), postObj);
   // creatUI(title.value, description.value, "", uid);
   console.log(docRef.id);
-  feedbck.innerHTML += createUI(title.value, description.value, "", uid, docRef.id);
+  feedbck.innerHTML += createUI(title.value, description.value, imageURL, uid, docRef.id);
   myModal.hide();
   title.value = "";
   description.value = "";
   file.value = "";
+    
 }
 window.addpost = addpost;
 
@@ -234,7 +248,7 @@ function createUI(title, description, image, uid, unID) {
     <div class="card">
       <form class="form">
         <div class="picture-blk">
-          <img src="img/screen-shot-2023-04-13-at-10-35-31-am.webp" alt="">
+          <img src=${image} alt="">
         </div>
         <div class="title">${title}</div>
         <div class="description">
@@ -275,7 +289,7 @@ function createUIforUser(title, description, image, uid, unID) {
     <div class="card">
       <form class="form">
         <div class="picture-blk">
-          <img src="img/screen-shot-2023-04-13-at-10-35-31-am.webp" alt="">
+          <img src=${image} alt="">
         </div>
         <div class="title">${title}</div>
         <div class="description">
@@ -299,6 +313,67 @@ function createUIforUser(title, description, image, uid, unID) {
   `;
   return UI;
 }
+function imageUpload(file) {
+  return new Promise(function (resolve, reject) {
+    // Create the file metadata
+    /** @type {any} */
+    const metadata = {
+      contentType: "image/jpeg",
+    };
+
+    // Upload file and metadata to the object 'images/mountains.jpg'
+    const storageRef = ref(storage, "images/" + file.name);
+    const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+
+    // Listen for state changes, errors, and completion of the upload.
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        switch (snapshot.state) {
+          case "paused":
+            console.log("Upload is paused");
+            break;
+          case "running":
+            console.log("Upload is running");
+            break;
+        }
+      },
+      (error) => {
+        // A full list of error codes is available at
+        // https://firebase.google.com/docs/storage/web/handle-errors
+        switch (error.code) {
+          case "storage/unauthorized":
+            // User doesn't have permission to access the object
+            break;
+          case "storage/canceled":
+            // User canceled the upload
+            break;
+
+          // ...
+
+          case "storage/unknown":
+            // Unknown error occurred, inspect error.serverResponse
+            break;
+        }
+      },
+      () => {
+        // Upload completed successfully, now we can get the download URL
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log("File available at", downloadURL);
+          resolve(downloadURL);
+        });
+      }
+    );
+  });
+}
+window.imageUpload = imageUpload;
+
+//create edit funtion
+
 
 window.createUIforUser = createUIforUser;
 
